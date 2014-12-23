@@ -1,0 +1,15 @@
+%h1 People#new
+%p Find me in app/views/people/new.html.haml
+
+= form_for :person do |f|
+  = f.label :first_name
+  = f.text_field :first_name
+  %br
+  = f.label :last_name
+  = f.text_field :last_name
+  %br
+  .permissions
+    = fields_for :permissions do |permission_field|
+      = permission_field.label :admin
+      = permission_field.check_box :admin
+
